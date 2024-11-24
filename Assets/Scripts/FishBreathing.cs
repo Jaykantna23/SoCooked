@@ -12,10 +12,11 @@ public class FishBreathing : MonoBehaviour
     private float currentBreath;
 
     public Slider breathSlider;
-    public string lostMenuSceneName = "LostMenu"; // Change kardena scene k name k acc 
+    public string lostMenuSceneName = "Lost Menu"; // Lost menu k scene k name k acc change kardena
 
     private bool isInWater = false;
     private bool isAlive = true;
+    private bool isInToxicWater = false;
 
     void Start()
     {
@@ -32,8 +33,7 @@ public class FishBreathing : MonoBehaviour
     {
         Debug.Log(currentBreath);
         if (!isAlive) return;
-
-        if (isInWater)
+        if (isInWater && !isInToxicWater)
         {
             RestoreBreath();
         }
@@ -62,8 +62,7 @@ public class FishBreathing : MonoBehaviour
 
     private void RestoreBreath()
     {
-        float restoreFactor = Mathf.Lerp(breathRestoreRate, 0.5f, currentBreath / maxBreath);
-        currentBreath += restoreFactor * Time.deltaTime;
+        currentBreath += breathRestoreRate * Time.deltaTime;
 
         if (currentBreath > maxBreath)
         {
@@ -77,20 +76,29 @@ public class FishBreathing : MonoBehaviour
         SceneManager.LoadScene(lostMenuSceneName);
     }
 
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water"))
         {
             isInWater = true;
         }
+        else if (other.CompareTag("ToxicWater"))
+        {
+            isInToxicWater = true;
+        }
     }
-
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Water"))
         {
             isInWater = false;
+        }
+        else if (other.CompareTag("ToxicWater"))
+        {
+            isInToxicWater = false;
         }
     }
 }
