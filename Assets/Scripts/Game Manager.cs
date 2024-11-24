@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public Vector3 checkpoint,startposition;
     public bool checkedcheckpoint=false;
+    public PlayExit playexit;
+    public 
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +28,21 @@ public class GameManager : MonoBehaviour
     }
     public void StartFromCheckPoint()
     {
-        if(checkedcheckpoint)gameObject.transform.position=checkpoint;
+        if(checkedcheckpoint){
+            gameObject.transform.position=checkpoint;
+            playexit.Play();
+        }
+
         else StartFromStart();
     }
     public void StartFromStart()
     {
         gameObject.transform.position=startposition;
+        playexit.Play();
     }
     public void Exit()
     {
         Application.Quit();
     }
+    
 }
