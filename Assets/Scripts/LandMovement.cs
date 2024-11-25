@@ -51,12 +51,9 @@ public class LandMovement : MonoBehaviour
 
         cameraForward = cameraTransform.forward;
         cameraForward.y = 0f;
-        if(isGrounded){
-            Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turningSpeed * Time.deltaTime * 10f);
-            Debug.Log(transform.rotation.eulerAngles);
-        }
-        
+        Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turningSpeed * Time.deltaTime * 10f);
+        Debug.Log(transform.rotation.eulerAngles);
     }
 
     private void MoveForward()
