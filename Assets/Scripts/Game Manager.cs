@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject text;
-
+    public GameObject panel;
+    public void Start(){
+        panel.SetActive(false);
+    }
     public void StartButton()
     {
         SceneManager.LoadScene(1);
@@ -54,5 +57,11 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+    public void Instructions(){
+        panel.SetActive(true);
+    }
+    public void CloseInstructions(){
+        panel.SetActive(false);
     }
 }
