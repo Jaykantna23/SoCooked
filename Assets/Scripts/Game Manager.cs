@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
     }
     public void StartButton()
     {
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene("MainLevel");
         if(!PlayerPrefs.HasKey("savepoint"))
         {
-            PlayerPrefs.SetString("savepoint", "level1");
+            PlayerPrefs.SetString("savepoint", "MainLevel");
         }
     }
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("level1");
+            SceneManager.LoadScene("MainLevel");
         }
     }
     public void MainMenu()
