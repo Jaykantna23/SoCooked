@@ -14,10 +14,7 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         SceneManager.LoadScene("MainLevel");
-        if(!PlayerPrefs.HasKey("savepoint"))
-        {
-            PlayerPrefs.SetString("savepoint", "MainLevel");
-        }
+        PlayerPrefs.SetString("savepoint", "MainLevel");
     }
 
     public void LoadGame()
@@ -45,6 +42,7 @@ public class GameManager : MonoBehaviour
     
     public void Restart()
     {
+        Time.timeScale = 1;
         if (PlayerPrefs.HasKey("savepoint"))
         {
             SceneManager.LoadScene(PlayerPrefs.GetString("savepoint"));
