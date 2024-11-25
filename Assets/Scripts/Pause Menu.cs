@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public Canvas canvas;
+    public GameObject canvas;
     public bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        canvas.enabled = false;
+        canvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,12 +25,12 @@ public class PauseMenu : MonoBehaviour
         }   
     }
     public void Pause(){
-        canvas.enabled = true;
+        canvas.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
     }
     public void Resume(){
-        canvas.enabled = false;
+        canvas.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
     }
