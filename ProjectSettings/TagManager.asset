@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Spikes
   - Complete
+  - FryComplete
   layers:
   - Default
   - TransparentFX
