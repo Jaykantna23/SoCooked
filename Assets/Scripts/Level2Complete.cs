@@ -10,8 +10,10 @@ public class Level2Complete : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.GetComponent<Collider>().gameObject.CompareTag("Player"))
+        if(collision.GetComponent<Collider>().gameObject.CompareTag("Player")){
             SceneManager.LoadScene(sceneToLoad);
+            PlayerPrefs.SetString("savepoint",sceneToLoad);
+        }
         
     
     }
