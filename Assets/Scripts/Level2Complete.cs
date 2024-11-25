@@ -13,10 +13,7 @@ public class Level2Complete : MonoBehaviour
         if(collision.GetComponent<Collider>().gameObject.CompareTag("Player"))
             SceneManager.LoadScene(sceneToLoad);
         
-        if (collision.GetComponent<Collider>().name == "FryComplete")
-        {
-            SceneManager.LoadScene(sceneToLoadFry);
-        }
+    
     }
 
 
