@@ -1,47 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
 {
-    public Vector3 checkpoint,startposition;
-    public bool checkedcheckpoint=false;
-    public PlayExit playexit;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject text;
 
-    // Update is called once per frame
-    void Update()
+    public void StartButton()
     {
-        
-    }
-
-    public void SetCheckPoint(Vector3 position)
-    {   
-        checkpoint=position;
-        checkedcheckpoint=true;
-    }
-    public void StartFromCheckPoint()
-    {
-        if(checkedcheckpoint){
-            gameObject.transform.position=checkpoint;
-            playexit.Play();
+        SceneManager.LoadScene(1);
+        if(!PlayerPrefs.HasKey("savepoint"))
+        {
+            PlayerPrefs.SetInt("savepoint", 1);
         }
+    }
 
-        else StartFromStart();
-    }
-    public void StartFromStart()
+    public void LoadGame()
     {
-        gameObject.transform.position=startposition;
-        playexit.Play();
+        if (PlayerPrefs.HasKey("savepoint"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("savepoint"));
+        }
+        else
+        {
+            text.SetActive(true);
+            Invoke("textoff", 1f);
+        }
     }
+
+    public void textoff()
+    {
+        text.SetActive(false);
+    }
+
     public void Exit()
     {
         Application.Quit();
     }
     
+    public void Restart()
+    {
+        if (PlayerPrefs.HasKey("savepoint"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("savepoint"));
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+    publci void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
