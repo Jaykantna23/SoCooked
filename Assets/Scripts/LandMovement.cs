@@ -22,7 +22,7 @@ public class LandMovement : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Cinemachine FreeLook Camera is not assigned!");
+            //.LogError("Cinemachine FreeLook Camera is not assigned!");
         }
 
 
@@ -53,7 +53,7 @@ public class LandMovement : MonoBehaviour
         cameraForward.y = 0f;
         Quaternion targetRotation = Quaternion.LookRotation(cameraForward);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turningSpeed * Time.deltaTime * 10f);
-        Debug.Log(transform.rotation.eulerAngles);
+        //.Log(transform.rotation.eulerAngles);
     }
 
     private void MoveForward()
@@ -69,8 +69,8 @@ public class LandMovement : MonoBehaviour
 
 
         rb.velocity = cameraForward * moveSpeed;
-        Debug.Log(cameraForward);
-        Debug.Log(rb.velocity);
+        //.Log(cameraForward);
+        //.Log(rb.velocity);
 
     }
 
