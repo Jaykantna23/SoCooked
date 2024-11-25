@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
     }
     public void StartButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("level1");
         if(!PlayerPrefs.HasKey("savepoint"))
         {
-            PlayerPrefs.SetInt("savepoint", 1);
+            PlayerPrefs.SetString("savepoint", "level1");
         }
     }
 
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("savepoint"))
         {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("savepoint"));
+            SceneManager.LoadScene(PlayerPrefs.GetString("savepoint"));
         }
         else
         {
@@ -51,12 +51,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("level1");
         }
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
     }
     public void Instructions(){
         panel.SetActive(true);

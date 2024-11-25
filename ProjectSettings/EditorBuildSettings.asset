@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lost Scene 2.unity
     guid: 2fcf16cb5826a1c4d88d0bfd43908189
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 1644cd05739a4644fb892ca30e26311e
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 7024681ca0aab0842a187bf2c432cc90
+  - enabled: 1
+    path: Assets/Scenes/Sewer 1.unity
+    guid: e9a3e8338c267694aaf01db281ec1def
+  - enabled: 1
+    path: Assets/Scenes/Win Scene.unity
+    guid: b560bfebac14eb94485a558c90be2795
   m_configObjects: {}

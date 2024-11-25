@@ -17,7 +17,7 @@ public class PlayExit : MonoBehaviour
         
     }
     public void Play(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("level1");
     }
     
 }
