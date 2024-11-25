@@ -8,6 +8,7 @@ TagManager:
   - ToxicWater
   - Ground
   - Spikes
+  - Complete
   layers:
   - Default
   - TransparentFX
