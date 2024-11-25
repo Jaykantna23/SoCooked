@@ -31,7 +31,7 @@ public class FishBreathing : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentBreath);
+        //.Log(currentBreath);
         if (!isAlive) return;
         if (isInWater && !isInToxicWater)
         {
