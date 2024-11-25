@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public GameObject text;
     public GameObject panel;
-    public void Start(){
-        panel.SetActive(false);
-    }
+    // public void Start(){
+    //     panel.SetActive(false);
+    // }
     public void StartButton()
     {
         SceneManager.LoadScene("MainLevel");
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("savepoint"))
         {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("savepoint"));
+            SceneManager.LoadScene(PlayerPrefs.GetString("savepoint"));
         }
         else
         {
