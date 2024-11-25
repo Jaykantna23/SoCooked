@@ -15,7 +15,7 @@ public class LandMovement : MonoBehaviour
 
     void Start()
     {
-
+        Cursor.visible = false;
         if (freeLookCamera != null)
         {
             cameraTransform = GameObject.FindWithTag("MainCamera").transform;
