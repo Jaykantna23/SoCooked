@@ -151,13 +151,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.058648884, y: 1, z: 0.9352018, w: 0}
+    value: {x: 0, y: 1, z: 0.8595097, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.0070021152, y: 0.7415627, z: 1, w: 0}
+    value: {x: 0, y: 1, z: 0.48031068, w: 0}
   gain:
     overrideState: 1
-    value: {x: 0.09296584, y: 1, z: 0.57782114, w: 0}
+    value: {x: 0, y: 1, z: 0.5914309, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Water
+  m_Name: ToxicWater
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -7209929595118695409}
