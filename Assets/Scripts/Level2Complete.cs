@@ -8,13 +8,12 @@ public class Level2Complete : MonoBehaviour
     [SerializeField] public string sceneToLoad;
     [SerializeField] public string sceneToLoadFry;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.name == "Complete")
-        {
+        if(collision.GetComponent<Collider>().gameObject.CompareTag("Player"))
             SceneManager.LoadScene(sceneToLoad);
-        }
-        if (collision.collider.name == "FryComplete")
+        
+        if (collision.GetComponent<Collider>().name == "FryComplete")
         {
             SceneManager.LoadScene(sceneToLoadFry);
         }
